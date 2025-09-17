@@ -1,4 +1,3 @@
-/* === Genel Sayfa Konteyneri === */
 .login-page-container {
   display: flex; 
   justify-content: center;
@@ -12,7 +11,6 @@
   padding: 1rem; 
 }
 
-/* === Login Kart (form + video birleşimi) === */
 .login-card {
   position: relative;  
   display: flex;
@@ -39,34 +37,35 @@
   box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
 
-/* === Form Paneli === */
 .login-form-panel {
   flex: 1;
   display: flex;
   flex-direction: column; 
   justify-content: center;
   align-items: center;
-  padding-right: 2rem;
+  padding-right: 1rem;
   color: #fff;
   background-color: rgba(0,0,0,0.5);
   position: relative;
   z-index: 2;
   max-width: 500px;
-  height: auto;
+  height: 100%;
   /*overflow-y: auto;*/ /*taşarsa kaydırma özelliği*/
 }
 
-/* === Form === */
 .login-form {
   display: flex;
   flex-direction: column; 
   width: 100%;
   max-width: 420px; 
-  padding: 1.5rem;  
+  padding-right: 1.5rem;  
+  padding-left: 1.5rem;  
+  padding-bottom: 1.5rem;  
+  padding-top: 0.1rem;
   background-color: rgba(0,0,0,0.7);
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-  gap: 0.9rem; 
+  gap: 1.4rem; 
   font-family: Roboto-Medium;
   /*border: 1px solid #fff;*//*eğer forma kenarlık eklemek istersek bunu kullanabiliriz.*/
   margin: 0 auto;
@@ -81,7 +80,6 @@
   text-shadow: 0 0 5px #0047FF, 0 0 10px #0047FF, 0 0 15px;
 }
 
-/* Logo */
 .logo-container {
   display: flex;
   gap: 0.1rem; 
@@ -101,7 +99,6 @@
   align-items: center;
 }
 
-/*personel-iletişimi-simgesi*/
 .usericon {
   display: block;    
   width: 150px; 
@@ -165,7 +162,6 @@
   color: #fff;
 }
 
-/* Buton */
 .login-form button {
   width: 100%;
   padding: 0.9rem; 
@@ -179,7 +175,6 @@
   transition: background 0.3s, transform 0.1s;
 }
 
-/* Video Paneli */
 .video-background-panel {
   flex: 1.2;
   position: relative;
@@ -193,7 +188,6 @@
   filter: brightness(0.7) contrast(1.1);
 }
 
-/* === Mobil Uyumluluk === */
 @media (max-width: 768px) {
   .login-page-container {
     flex-direction: column;
