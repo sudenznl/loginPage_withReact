@@ -1,0 +1,37 @@
+.folder-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;     height: 100vh;
+    width: 100vw; 
+    background-color: #111;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+  
+  .page-frame {
+    width: 150px;
+    height: 250px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    margin-right: 50px;
+  }
+  
+  .page-line {
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+  
+  .tms-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    bottom: 50px;
+    left: 220px;
+  }
+  

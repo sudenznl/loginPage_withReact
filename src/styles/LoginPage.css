@@ -1,0 +1,257 @@
+/* === Genel Sayfa Konteyneri === */
+.login-page-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  width: 100vw;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #0f0f0f;
+  overflow: auto; 
+  padding: 1rem; 
+}
+
+/* === Login Kart (form + video birleşimi) === */
+.login-card {
+  position: relative;  
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1250px;
+  max-height: 85vh; 
+  height: auto;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1; 
+}
+
+.login-card:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 1;
+}
+
+.login-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+/* === Form Paneli === */
+.login-form-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  padding-right: 2rem;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  height: auto;
+  /*overflow-y: auto;*/ /*taşarsa kaydırma özelliği*/
+}
+
+/* === Form === */
+.login-form {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+  max-width: 420px; 
+  padding: 1.5rem;  
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  gap: 0.9rem; 
+  font-family: Roboto-Medium;
+  /*border: 1px solid #fff;*//*eğer forma kenarlık eklemek istersek bunu kullanabiliriz.*/
+  margin: 0 auto;
+}
+
+.login-form:hover {
+  /*text-shadow: 0 0 5px #0047FF, 0 0 10px #fff, 0 0 15px #0047FF;*/
+  border: 1px solid #0047FF;
+}
+
+.login-form:hover .logo-text {
+  text-shadow: 0 0 5px #0047FF, 0 0 10px #0047FF, 0 0 15px;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  gap: 0.1rem; 
+  align-items: flex-start;
+}
+
+.login-logo img,
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff; 
+  align-items: center;
+}
+
+/*personel-iletişimi-simgesi*/
+.usericon {
+  display: block;    
+  width: 150px; 
+  height: auto;
+  margin: 0 auto 1rem auto;
+}
+
+.usericon img {
+  max-width: 150px;
+}
+
+/* Başlık */
+.login-title {
+  font-size: 2.5rem;  
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* Input */
+.login-form input,
+.password-input {
+  width: 95%;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.15rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.login-input:focus,
+.password-input:focus { 
+  outline: none; 
+  border-color: #0047FF; 
+  box-shadow: 0 0 8px rgba(0, 71, 255, 0.7); 
+}
+
+/* Password toggle */
+.password-input-wrapper {
+  position: relative; 
+  width: 100%; 
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.toggle-password:hover {
+  color: #fff;
+}
+
+/* Buton */
+.login-form button {
+  width: 100%;
+  padding: 0.9rem; 
+  background-color: #0047FF;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+/* Video Paneli */
+.video-background-panel {
+  flex: 1.2;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-background-panel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.1);
+}
+
+/* === Mobil Uyumluluk === */
+@media (max-width: 768px) {
+  .login-page-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .login-card {
+    flex-direction: column;
+    width: 90%; 
+    max-width: 450px; 
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+  }
+
+  .login-form-panel {
+    width: 100%;          
+    max-width: 100%;      
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .video-background-panel {
+    display: none;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .usericon img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 0.5rem;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .login-logo img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+/* === Sayfa Temeli === */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
