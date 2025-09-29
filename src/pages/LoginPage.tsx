@@ -2,7 +2,7 @@ import React from 'react';
 import LoginForm from '../components/LoginForm';
 import VideoBackground from '../components/VideoBackground';
 import '../styles/LoginPage.css';
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   return (
       <div className="login-page-container">
       <div className="login-card">

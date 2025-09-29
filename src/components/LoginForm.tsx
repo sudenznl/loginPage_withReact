@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 const logo = "/assets/tms-logo.png";
 const usericon = "/assets/white-person-icon.png";
 
-const LoginForm = () => {
-  const [showPassword, setShowPassword] = useState(false);
+const LoginForm: React.FC = () => {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Giriş butonuna tıklandı!');
   };
@@ -20,7 +20,7 @@ const LoginForm = () => {
     <motion.form
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 7 }}
+    transition={{ duration: 0.7 }}
     className="login-form" onSubmit={handleSubmit}
     >
       <div className="logo-container">

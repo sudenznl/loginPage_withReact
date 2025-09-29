@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import '../styles/FolderAnimation.css';
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, x: -300 },
   visible: { 
     opacity: 1, 
@@ -12,16 +13,17 @@ const containerVariants = {
   }
 };
 
-const lineVariants = {
+// framer-motion Variants tipi repeatType için belirli değerler bekler
+const lineVariants: Variants = {
   hidden: { width: 0 },
-  visible: i => ({
+  visible: (i: number) => ({
     width: '80%',
     transition: {
       delay: 1.5 + i * 0.2,
       duration: 0.5,
       ease: "easeInOut",
       repeat: Infinity,
-      repeatType: "mirror"
+      repeatType: 'reverse'
     }
   })
 };
