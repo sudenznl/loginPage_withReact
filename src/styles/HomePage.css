@@ -1,0 +1,47 @@
+.homepage 
+{
+display: flex;
+height: 100vh;
+width: 100%;
+background-color: var(--bg-color, #f9f9f9);
+}
+
+.content 
+{
+flex: 1;
+overflow-y: auto;
+background-color: #fff;
+padding: 3%;
+width: 93vw;
+text-align: center;
+margin-left: 75px;
+margin-top: 55px;
+}
+
+/* çok da güzel durmadı gibi.
+.homepage.light .content {
+    background-color: #fff;
+    color: #000;
+}
+
+.homepage.dark .content{
+    background-color: #000;
+    color: #fff;
+}
+*/
+
+.homepage .main-content 
+{
+  transition: margin-left 0.3s ease;
+}
+
+.homepage .main-content 
+{
+  margin-left: 5px;
+}
+
+/*slidbar açıldığında kaydırmak için.*/
+.homepage .main-content.slidebar-open 
+{
+  margin-left: 350px; 
+}

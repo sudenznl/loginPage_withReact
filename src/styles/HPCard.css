@@ -1,0 +1,50 @@
+.card-row 
+{
+  margin: 20px;
+}
+
+.custom-card 
+{
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.custom-card:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title 
+{
+  color: white; 
+  background-color: #0000;
+  padding: 3px 3px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 15px;
+  text-align: center;
+}
+
+.card-title.red 
+{
+  color: #FF4D4F;
+}
+
+.card-title.blue 
+{
+ color: #1890FF;
+}
+
+.card-title.green 
+{
+  color: #52C41A;
+}
+
+.card-title.orange 
+{
+  color: #FAAD14;
+}

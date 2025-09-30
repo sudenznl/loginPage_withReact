@@ -1,0 +1,128 @@
+.helping-container 
+{
+  max-width: 700px;
+  margin: 40px auto 80px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 36px 28px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.helping-header 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.helping-header h1 
+{
+  font-size: 2rem;
+  margin: 0;
+  color: #2a5d9f;
+}
+
+.helping-welcome
+{
+  display: flex;
+  align-items: center;
+  background: #e3f2fd;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
+
+.helping-sections 
+{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.helping-box 
+{
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.helping-box b 
+{
+  margin-right: 6px;
+}
+
+.helping-box ul 
+{
+  margin: 0 0 0 12px;
+  padding: 0;
+}
+
+.helping-faq 
+{
+  background: #fffde7;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.helping-faq h3 
+{
+  color: #fbc02d;
+  margin-bottom: 10px;
+}
+
+.helping-faq ul 
+{
+  margin-left: 12px;
+}
+
+.helping-support 
+{
+  background: #e8f5e9;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.helping-support h3 
+{
+  color: #43a047;
+  margin-bottom: 10px;
+}
+
+.helping-download 
+{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.helping-download-btn 
+{
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+
+.helping-download-btn:hover 
+{
+  background: #b71c1c;
+}

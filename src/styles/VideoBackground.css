@@ -1,4 +1,5 @@
-.video-background {
+.video-background 
+{
     width: 100%;
     height: 100%;
     position: relative;
@@ -7,7 +8,8 @@
     align-items: center;
   }
   
-  .video-element {
+  .video-element 
+  {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -15,7 +17,8 @@
   }
   
   /*video üzerine yazı gelirse VideoBackground.jsx dosyasında yazı yeri mevcut*/
-  .video-overlay {
+  .video-overlay 
+  {
     position: absolute;
     top: 0;
     left: 0;
@@ -32,6 +35,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
   
-  .video-overlay h2 {
+  .video-overlay h2 
+  {
     line-height: 1.4;
   }

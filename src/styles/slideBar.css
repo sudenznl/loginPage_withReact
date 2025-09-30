@@ -1,0 +1,136 @@
+.slideBar 
+{
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 10px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 2000;
+  border-radius: 5%;
+}
+
+.slideBar.open 
+{
+  width: 350px;
+}
+
+.slideBar.closed 
+{
+  width: 5%; 
+}
+
+.slideBar .menu-icon 
+{
+  font-size: 24px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.slideBar .menu-icon:hover 
+{
+  transform: rotate(90deg);
+}
+
+.slideBar ul 
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.slidetext
+{
+  display: inline-block;
+}
+
+/*kayan yazı özelliğinin kodları :
+.slideBar.open .slidetext{
+  animation: slide 8s linear 1;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(100%); 
+  }
+  50% {
+    transform: translateX(0);   
+  }
+  100% {
+    transform: translateX(0);
+  }
+}*/
+
+.slideBar ul li 
+{
+  padding: 12px 15px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+}
+
+.textkutusu
+{
+  overflow: hidden;
+  position: relative;
+}
+
+.slideBar .textkutusu:hover 
+{
+  background: rgba(255, 255, 255, 0.15);
+  padding-left: 25px;
+}
+
+.slideBar.closed .textkutusu 
+{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo
+{
+  padding:5%;
+  margin: 3%;
+  width: 250px;
+  height: 95px;
+  transition: opacity 0.3s ease;
+}
+
+.slideBar.closed .logo
+{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.iconslide
+{
+  width: auto;
+  height: 25px;
+  padding-right: 5px;
+}
+
+/* burada ikonların kaybolması için olan kodlar :
+.slideBar.closed .iconslide{
+  opacity: 0;
+  pointer-events: none;
+}*/
+
+.slidebar-menu-icon 
+{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}

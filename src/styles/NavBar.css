@@ -1,0 +1,56 @@
+.NavBar 
+{
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 24px;
+    border-bottom: 1px solid #000;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    z-index: 1000; 
+    gap: 12px; /* ikonlar arasında boşluk */
+}
+
+.NavBar.light 
+{
+    background-color: #fff;
+    color: #000; /* ikon ve metinler için kontrast renk */
+}
+
+.NavBar.dark 
+{
+    background-color: #000;
+    color: #fff; /* ikon ve metinler için kontrast renk */
+}
+
+.toggle_icon 
+{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px;
+    display: inline-block;
+    object-fit: contain;
+    z-index: 10000;
+}
+
+.logout_icon
+{
+    cursor: pointer;
+    padding: 3%;
+    font-size: 28px; 
+    color: inherit; /* tema rengine uyum sağlar */
+    z-index: 10000;
+}
+
+.NavBar.light .logout_icon:hover 
+{
+    color: #0047FF;
+}
+
+.NavBar.dark .logout_icon:hover 
+{
+    color: #7aa2ff;
+}
