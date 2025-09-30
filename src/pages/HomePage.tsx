@@ -10,7 +10,7 @@ import '../styles/HomePage.css';
 
 const HomePage: React.FC = () => {
   const [theme, setTheme] = useState('light');
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [showHelp, setShowHelp] = useState(false);
 
   const handleMenuClick = (key: string) => {
