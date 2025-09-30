@@ -38,6 +38,9 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
     <div className={`NavBar ${theme}`}>
 
       <div className="left-section">
+
+        <p className="nav-title">CARL</p>
+
         {currentUser && (
           <div className="user-avatar">
             <FaUserCircle 
@@ -48,7 +51,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             <span className="user-name">{currentUser.name}</span>
           </div>
         )}
-        
+
       </div>
 
       <div className="right-section">

@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import { dataSource, faultTrains, dailyMaintenanceTrains, kmTrains, getDetailColumnsByKey } from '../data/trains';
 import type { ColumnsType } from 'antd/es/table';
 
+
 interface DataType {
   key: React.Key;
   TrenName: string;
@@ -35,10 +36,12 @@ const HPCard: React.FC = () => {
       prev.map(train => {
         if (train.key === key) {
           const updated = { ...train, done: !train.done };
-          if (updated.done) {
+          if (updated.done) 
+          {
             message.success(`${updated.TrenName} treninin bakımı yapıldı ✅`);
           } 
-          else {
+          else 
+          {
             message.info(`${updated.TrenName} treninin bakımı bekliyor ⏳`);
           }
           return updated;

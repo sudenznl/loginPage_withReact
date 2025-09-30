@@ -12,7 +12,7 @@ const getUserAvatar = (name: string, gender: "male" | "female") => (
   </Avatar>
 );
 
-//şimdilik güncelleme atıyoruz :
+//şimdilik güncelleme için sabit veriler :
 const userActions = [
   { userId: "u1", action: "Bakım notu ekledi", date: "2025-09-29 10:12" },
   { userId: "u2", action: "Arıza kaydı güncelledi", date: "2025-09-29 09:45" },

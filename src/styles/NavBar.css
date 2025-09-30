@@ -1,86 +1,98 @@
 .NavBar 
 {
-    height: 75px;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 24px;
-    border-bottom: 1px solid #000;
-    transition: background-color 0.3s ease;
-    position: relative;
-    z-index: 1000; 
-    gap: 12px; 
+  height: 75px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  border-bottom: 1px solid #000;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 1000; 
+  gap: 12px; 
 }
 
- .left-section 
+.left-section 
 {   
-    padding: 3%;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+}
+
+ .left-section .nav-title 
+ {
+   font-size: 35px;
+   font-weight: 600;
+   margin-left: 5px;
+   padding-left: 16px;
+   display: inline-block;
+   position: relative;
+ }
+
+.user-wrapper
+{
+  position: relative;
+  display: inline-block;  
+}
+
+.user-avatar 
+{
+  display: flex;
+  padding-left: 16px;
+  gap: 8px; 
 }
 
 .right-section 
 {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 1%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1%;
 }
 
 .NavBar.light 
 {
-    background-color: #fff;
-    color: #000; 
+  background-color: #fff;
+  color: #000; 
 }
 
 .NavBar.dark 
 {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 .toggle_icon 
 {
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    padding: 9px;
-    display: inline-block;
-    object-fit: contain;
-    z-index: 10000;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  padding: 9px;
+  display: inline-block;
+  object-fit: contain;
+  z-index: 10000;
 }
 
 .logout_icon
 {
-    cursor: pointer;
-    padding: 11px;
-    width: 45px;
-    height: 45px;
-    color: inherit;
-    z-index: 10000;
-    display: inline-block;
+  cursor: pointer;
+  padding: 11px;
+  width: 45px;
+  height: 45px;
+  color: inherit;
+  z-index: 10000;
+  display: inline-block;
 }
 
 .NavBar.light .logout_icon:hover 
 {
-    color: #0047FF;
+  color: #0047FF;
 }
 
 .NavBar.dark .logout_icon:hover 
 {
-    color: #7aa2ff;
+   color: #7aa2ff;
 }
 
-.user-wrapper{
-    position: relative;
-    display: inline-block;  
-}
-
-.user-avatar {
-  display: flex;
-  align-items: center;
-  padding-left: 16px;
-  gap: 8px; 
-}

@@ -17,7 +17,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2%;
+    padding-right: 2%;
+    padding-left: 0.01px;
   }
   
   /* Alt Panel */
@@ -89,7 +90,7 @@
     box-sizing: border-box !important;
     display: inline-flex !important;
     align-items: center !important;
-    padding: 0 8px !important;
+    padding: 0 5px !important;
     border-radius: 5px !important;
   }
 
