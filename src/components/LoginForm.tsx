@@ -18,30 +18,31 @@ const LoginForm: React.FC = () => {
   const [error, setError] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError('');
-    
-    // Kullanıcı adı ve şifre doğrulamasını yapıyoruz : ve giriş başarılıysa homepage gödreiyoruz :
-    const user = users.find(u => u.username === username && u.password === password);
-    if (user) 
-    {
-      console.log('Giriş başarılı!', user);
-      alert(`Hoş geldiniz ${user.name}!`);
-      navigate('/home');
-    } 
-    else 
-    {
-      setError('Kullanıcı adı veya şifre hatalı!');
-    }
-  };
+  e.preventDefault();
+  setError('');
+
+  const user = users.find(u => u.username === username && u.password === password);
+  // Kullanıcı adı ve şifre doğru girilirse home page yönlendiriyoruz.
+  if (user) 
+  {
+    console.log('Giriş başarılı!', user.name);
+    alert(`Hoş geldiniz ${user.name}!`);
+    localStorage.setItem("currentUser", JSON.stringify(user)); // kullanıcıyı keydediyoruz ki iconda görünebilsin.
+    navigate('/home');
+  } 
+  else //yanlış girişte hata mesajı gösteriyoruz.
+  {
+    setError('Kullanıcı adı veya şifre hatalı!');
+  }
+};
 
   return (
     <motion.form
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7 }}
-    className="login-form" onSubmit={handleSubmit}
-    >
+    className="login-form" onSubmit={handleSubmit}>
+
       <div className="logo-container">
         <div className="logo-wrap">
           <img src={logo} alt="TMS Logo" className="logoform" />

@@ -12,6 +12,7 @@ const getUserAvatar = (name: string, gender: "male" | "female") => (
   </Avatar>
 );
 
+//şimdilik güncelleme atıyoruz :
 const userActions = [
   { userId: "u1", action: "Bakım notu ekledi", date: "2025-09-29 10:12" },
   { userId: "u2", action: "Arıza kaydı güncelledi", date: "2025-09-29 09:45" },
@@ -31,7 +32,8 @@ const columns = [
           {getUserAvatar(user.name, user.gender)}
           {user.name}
         </span>
-      ) : (
+      ) : 
+      (
         <span className="unknown-user">Bilinmeyen Kullanıcı</span>
       );
     }
@@ -55,7 +57,7 @@ const UserProcess: React.FC = () => (
       dataSource={userActions.map((item, idx) => ({ ...item, key: idx }))}
       pagination={false}
       bordered
-      title={() => <span className="table-title">Son Durum</span>}
+      title={() => <span className="table-title">KULLANICI GÜNCELLEMELERİ</span>}
     />
   </div>
 );

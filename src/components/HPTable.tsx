@@ -11,7 +11,8 @@ import { Tooltip, Tag} from 'antd';
 
 const { Header, Content } = Layout;
 
-interface DataType {
+interface DataType 
+{
   key: React.Key;
   fileName: string;
   responsible: string;
@@ -19,7 +20,8 @@ interface DataType {
   lastUpdate: string;
 }
 
-const dataSource: DataType[] = [
+const dataSource: DataType[] = 
+[
   { key: '1', fileName: 'Rapor.pdf', responsible: 'Ahmet', date: '2025-09-01', lastUpdate: '2025-09-15' },
   { key: '2', fileName: 'Sunum.pptx', responsible: 'Ayşe', date: '2025-08-20', lastUpdate: '2025-09-10' },
   { key: '3', fileName: 'Veriler.xlsx', responsible: 'Mehmet', date: '2025-07-12', lastUpdate: '2025-08-30' },
@@ -45,6 +47,7 @@ const uniqueValues = <T extends keyof DataType>(key: T): { text: string; value: 
     .map((val) => ({ text: val, value: val }));
 
 const columns: TableColumnsType<DataType> = [
+
   {
     title: 'Dosya Adı',
     dataIndex: 'fileName',
@@ -54,6 +57,7 @@ const columns: TableColumnsType<DataType> = [
     filters: uniqueValues('fileName'),
     onFilter: (value, record) => record.fileName.indexOf(value as string) === 0,
   },
+
   {
     title: 'Sorumlu Kişi',
     dataIndex: 'responsible',
@@ -63,6 +67,7 @@ const columns: TableColumnsType<DataType> = [
     filters: uniqueValues('responsible'),
     onFilter: (value, record) => record.responsible === value,
   },
+
   {
     title: 'Tarih',
     dataIndex: 'date',
@@ -72,6 +77,7 @@ const columns: TableColumnsType<DataType> = [
     filters: uniqueValues('date'),
     onFilter: (value, record) => record.date === value,
   },
+
   {
     title: 'Son Güncelleme Tarihi',
     dataIndex: 'lastUpdate',
@@ -82,12 +88,14 @@ const columns: TableColumnsType<DataType> = [
       if (daysDiff <= 5) color = 'green';
       else if (daysDiff <= 15) color = 'orange';
       else color = 'red';
-      return <span style={{ color }}>{text}</span>;
-    },
+      return <span style={{ color }}>{text}</span>; },
+
   },
+
 ];
 
 const App: React.FC = () => {
+
   const [filteredData, setFilteredData] = useState<DataType[]>(dataSource);
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [searchValue, setSearchValue] = useState<string>('');
@@ -106,11 +114,13 @@ const App: React.FC = () => {
   };
 
   const handleTypeChange = (value: string) => {
-    if (value === 'all') {
+    if (value === 'all') 
+    {
       setSelectedType(null);
       filterData(searchValue, null, selectedDate);
     } 
-    else {
+    else 
+    {
       setSelectedType(value);
       filterData(searchValue, value, selectedDate);
     }
@@ -124,15 +134,18 @@ const App: React.FC = () => {
   const filterData = (search: string, type: string | null, date: string | null) => {
     let result = dataSource;
 
-    if (search) {
+    if (search) 
+    {
       result = result.filter((item) => item.fileName.toLowerCase().includes(search.toLowerCase()));
     }
 
-    if (type) {
+    if (type) 
+    {
       result = result.filter((item) => item.fileName.toLowerCase().endsWith(type.toLowerCase()));
     }
 
-    if (date) {
+    if (date) 
+    {
       result = result.filter((item) => item.date === date);
     }
 
