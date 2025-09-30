@@ -71,7 +71,7 @@
   background-color: rgba(0,0,0,0.7);
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-  gap: 1.4rem; 
+  gap: 1.7rem; 
   font-family: Roboto-Medium;
   /*border: 1px solid #fff;*//*eğer forma kenarlık eklemek istersek bunu kullanabiliriz.*/
   margin: 0 auto;
@@ -83,17 +83,19 @@
   border: 1px solid #0047FF;
 }
 
-.login-form:hover .logo-text 
+.login-form:hover .logoform-text 
 {
   text-shadow: 0 0 5px #0047FF, 0 0 10px #0047FF, 0 0 15px;
 }
 
 .logo-container 
 {
+  padding-top: 3%;
   display: flex;
   gap: 0.1rem; 
   align-items: center;
   line-height: 1;
+
 }
 
 .login-logo img,
@@ -109,7 +111,7 @@
 
 .logoform-text 
 {
-  font-size: 2.5rem;   
+  font-size: 2.1rem;   
   font-style: italic;  
   font-weight: 600;
   color: #fff; 

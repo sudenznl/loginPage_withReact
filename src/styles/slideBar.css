@@ -90,7 +90,6 @@
 .slideBar .textkutusu:hover 
 {
   background: rgba(255, 255, 255, 0.15);
-  padding-left: 25px;
 }
 
 .slideBar.closed .textkutusu 

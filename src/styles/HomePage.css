@@ -15,20 +15,7 @@ padding: 3%;
 width: 93vw;
 text-align: center;
 margin-left: 75px;
-margin-top: 15px;
 }
-
-/* çok da güzel durmadı gibi.
-.homepage.light .content {
-    background-color: #fff;
-    color: #000;
-}
-
-.homepage.dark .content{
-    background-color: #000;
-    color: #fff;
-}
-*/
 
 .homepage .main-content 
 {
@@ -45,3 +32,14 @@ margin-top: 15px;
 {
   margin-left: 350px; 
 }
+
+/* çok da güzel durmadı gibi.
+.homepage.light .content {
+    background-color: #fff;
+    color: #000;
+}
+
+.homepage.dark .content{
+    background-color: #000;
+    color: #fff;
+} */
