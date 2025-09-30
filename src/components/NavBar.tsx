@@ -17,13 +17,14 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  //burada çıkış yapmak için navigate eledik ve geri login'e yönlendirdik :
+  //burada çıkış yapmak için navigate ekledik ve geri login'e yönlendirdik :
   const handleLogout = () => {
     navigate('/login');
   };
 
   return (
     <div className={`NavBar ${theme}`}>
+      
       <img 
         onClick={toggle_mode} 
         src={theme === 'light' ? toggle_dark : toggle_light}  
@@ -37,6 +38,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
         size={28}
         aria-label="Çıkış"
       />
+
     </div>
   );
 };

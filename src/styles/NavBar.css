@@ -16,21 +16,21 @@
 .NavBar.light 
 {
     background-color: #fff;
-    color: #000; /* ikon ve metinler için kontrast renk */
+    color: #000; 
 }
 
 .NavBar.dark 
 {
     background-color: #000;
-    color: #fff; /* ikon ve metinler için kontrast renk */
+    color: #fff;
 }
 
 .toggle_icon 
 {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
-    padding: 8px;
+    padding: 9px;
     display: inline-block;
     object-fit: contain;
     z-index: 10000;
@@ -39,9 +39,10 @@
 .logout_icon
 {
     cursor: pointer;
-    padding: 3%;
-    font-size: 28px; 
-    color: inherit; /* tema rengine uyum sağlar */
+    padding: 11px;
+    width: 45px;
+    height: 45px;
+    color: inherit;
     z-index: 10000;
 }
 
