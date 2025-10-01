@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HPCard from "../components/HPCard";
+import HPBakimTakvimi from '../components/HPBakimTakvimi';
 import HPGraph from "../components/HPGraph";
 import HPTable from "../components/HPTable";
 import NavBar from "../components/NavBar";
@@ -12,16 +13,32 @@ const HomePage: React.FC = () => {
   const [theme, setTheme] = useState('light');
   const [isOpen, setIsOpen] = useState(true);
   const [showHelp, setShowHelp] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   const handleMenuClick = (key: string) => 
   {
-    if (key === "help") setShowHelp(true);
-    else if (key === "home") setShowHelp(false);
-  };//yardım sayfasını açmak için fonk.
+    if (key === "help") 
+   {
+      setShowHelp(true);
+      setShowCalendar(false);
+    } 
+    else if (key === "faults") 
+    {
+      setShowHelp(false);
+      setShowCalendar(true);
+    } 
+    else if (key === "home") 
+    {
+      setShowHelp(false);
+      setShowCalendar(false);
+    }
+  };//slidebardaki sayfaları açmak için fonk.
+
 
   return (
 
     <div className={`homepage ${theme}`}>
+
       <HPslideBar
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -33,9 +50,11 @@ const HomePage: React.FC = () => {
         <NavBar theme={theme} setTheme={setTheme} />
         
         <div className="content">
-          {/*eğer slidebarda yardm a tıklarsak content bölmünde o açılacak.*/}
+          {/*eğer slidebarda tıklanan sayfanın açılması için :.*/}
           {showHelp ? (
             <Helping />
+          ) : showCalendar ? (
+            <HPBakimTakvimi />
           ) : (
             <>
               <UserProcess />
@@ -44,8 +63,11 @@ const HomePage: React.FC = () => {
               <HPTable />
             </>
           )}
+
         </div>
+
       </div>
+
     </div>
   );
 };

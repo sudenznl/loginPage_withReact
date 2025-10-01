@@ -12,7 +12,7 @@ const HPslideBar: React.FC<HPslideBarProps> = ({ isOpen, setIsOpen, onMenuClick 
   // Menü itemlarını diziye dönüştürdük. bu şekide tek tek li kullanmama gerek kalmadı.
   const menuItems = [
     { key: "home", label: "Ana Sayfa" },
-    { key: "faults", label: "Arızalı Trenler" },
+    { key: "faults", label: "Bakım Takvimi" },
     { key: "daily", label: "Günlük Bakım Yapılacak Trenler" },
     { key: "help", label: "Yardım" },
     { key: "contact", label: "İletişim" },

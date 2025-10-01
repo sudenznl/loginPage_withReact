@@ -1,0 +1,27 @@
+.bakim-takvimi-container{
+    width: 95%;
+    height: 100%;
+    margin-left: 3%;
+    padding: 5%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.date-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date-cell .blue p{
+  background-color: rgba(78, 163, 216, 0.3);
+  color: black;
+  font-weight: medium;
+}
+
+.date-cell .green p{
+  background-color: rgba(108, 240, 111, 0.3);
+  color: black;
+  font-weight: medium;
+  display: block;
+}
