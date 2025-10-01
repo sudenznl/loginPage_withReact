@@ -2,6 +2,7 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 import '../styles/HPGraph.css';
 
+//grafik için data :
 const data = [
   { day: 'Pazartesi', iş_A: 6, iş_B: 3, iş_C: 4 },
   { day: 'Salı', iş_A: 5, iş_B: 4, iş_C: 2 },

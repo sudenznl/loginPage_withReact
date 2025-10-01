@@ -6,17 +6,19 @@ import toggle_dark from '../assets/night.png';
 import { IoIosExit } from "react-icons/io";
 import { FaUserCircle } from 'react-icons/fa';
 
-interface NavBarProps {
+interface NavBarProps 
+{
   theme: string;
   setTheme: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
+
   const navigate = useNavigate();
 
   const toggle_mode = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  };//temanın değişebilmesi için fonk. kullanmalıyız.
 
   // Kullanıcı bilgilerini state'e alıyoruz.
   const [currentUser, setCurrentUser] = useState<{ name: string } | null>(null);
@@ -30,14 +32,14 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("currentUser"); //çıkış yaptıktan sonra kullanıcıyı localStorageden kaldırıyoruz ki çakışma olmasın.
-    navigate('/login');
+    navigate('/login');//çıkış yapına login 'e yönlendirme yapıyoruz.
   };
 
   return (
 
     <div className={`NavBar ${theme}`}>
 
-      <div className="left-section">
+      <div className="left-section">  {/*soldaki kısım*/}
 
         <p className="nav-title">CARL</p>
 
@@ -54,7 +56,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
       </div>
 
-      <div className="right-section">
+      <div className="right-section">{/*sağdaki kısım*/}
         <img 
           onClick={toggle_mode} 
           src={theme === 'light' ? toggle_dark : toggle_light}  

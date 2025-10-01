@@ -13,21 +13,27 @@ const HomePage: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [showHelp, setShowHelp] = useState(false);
 
-  const handleMenuClick = (key: string) => {
+  const handleMenuClick = (key: string) => 
+  {
     if (key === "help") setShowHelp(true);
     else if (key === "home") setShowHelp(false);
   };//yardım sayfasını açmak için fonk.
 
   return (
+
     <div className={`homepage ${theme}`}>
       <HPslideBar
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        onMenuClick={handleMenuClick} // yeni prop
+        onMenuClick={handleMenuClick} 
       />
+
       <div className={`main-content${isOpen ? ' slidebar-open' : ''}`}>
+
         <NavBar theme={theme} setTheme={setTheme} />
+        
         <div className="content">
+          {/*eğer slidebarda yardm a tıklarsak content bölmünde o açılacak.*/}
           {showHelp ? (
             <Helping />
           ) : (

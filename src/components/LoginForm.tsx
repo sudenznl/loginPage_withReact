@@ -11,13 +11,15 @@ const logo = "/assets/img/tms-logo.png";
 const usericon = "/assets/white-person-icon.png";
 
 const LoginForm: React.FC = () => {
-  const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [error, setError] = useState<string>('');
+
+  const navigate = useNavigate();//yönlrndirme
+  const [showPassword, setShowPassword] = useState<boolean>(false);//şifre görme
+  const [username, setUsername] = useState<string>('');//kullanıcı adı
+  const [password, setPassword] = useState<string>('');//şifre
+  const [error, setError] = useState<string>('');//hata mesajı
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
   e.preventDefault();
   setError('');
 
@@ -43,7 +45,7 @@ const LoginForm: React.FC = () => {
     transition={{ duration: 0.7 }}
     className="login-form" onSubmit={handleSubmit}>
 
-      <div className="logo-container">
+      <div className="logo-container">{/*logonun bulunduğu bölüm*/}
         <div className="logo-wrap">
           <img src={logo} alt="TMS Logo" className="logoform" />
         </div>
@@ -58,7 +60,7 @@ const LoginForm: React.FC = () => {
         className="login-input"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-      />
+      />{/*kullanıcı_adı girişi*/}
 
       <div className="password-input-wrapper">
         <input
@@ -67,18 +69,21 @@ const LoginForm: React.FC = () => {
           className="password-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />
+        />{/*şifre girişi*/}
+
         <span
           className="toggle-password"
           onClick={() => setShowPassword(!showPassword)}
         >
           {showPassword ? <FaEyeSlash /> : <FaEye />}
-        </span>
+        </span>{/*şifre görme ikonu*/}
+
       </div>
 
       {error && <div className="error-message">{error}</div>}
 
       <Button text="Login" />
+      
     </motion.form>
   );
 };

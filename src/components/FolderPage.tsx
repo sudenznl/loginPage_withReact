@@ -13,7 +13,6 @@ const containerVariants: Variants = {
   }
 };
 
-// framer-motion Variants tipi repeatType için belirli değerler bekler
 const lineVariants: Variants = {
   hidden: { width: 0 },
   visible: (i: number) => ({

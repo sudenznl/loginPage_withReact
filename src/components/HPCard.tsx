@@ -13,23 +13,25 @@ interface DataType {
   kmLeft?: number;
   done?: boolean;
   note?: string;
-}
+} // '? ': opsiyonel demek. Tren name koymadık çünkü onu kullanmka zorundayız.
 
 const HPCard: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState("");
-  const [modalColumns, setModalColumns] = useState<ColumnsType<DataType>>([]);
-  const [modalData, setModalData] = useState<DataType[]>([]);
-  const [dailyMaintenance, setDailyMaintenance] = useState<DataType[]>(dailyMaintenanceTrains);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);{/* Modal açık/kapalı olması */}
+  const [modalTitle, setModalTitle] = useState("");{/* Modal başlığı */}
+  const [modalColumns, setModalColumns] = useState<ColumnsType<DataType>>([]);{/* Modal içindeki tablo sütunları */}
+  const [modalData, setModalData] = useState<DataType[]>([]);{/* Modal içindeki tablo verileri */}
+  const [dailyMaintenance, setDailyMaintenance] = useState<DataType[]>(dailyMaintenanceTrains);{/* Günlük bakım trenleri */}
 
   const today = dayjs();
   const oneWeekLater = today.add(7, 'day');
 
   const upcomingTrains = dataSource.filter(item =>
     item.date && dayjs(item.date).isAfter(today) && dayjs(item.date).isBefore(oneWeekLater)
-  );
+  );{/* Bakım tarihi yaklaşan trenler */}
 
   const approachingKmTrains = kmTrains.filter(train => train.kmLeft !== undefined && train.kmLeft < 1500);
+{/* KM'si yaklaşan trenlere filtreliyoruz, eğer km'si 1500 den az olan trenler km bakımı yaklaşmış oluyor. */}
 
   const handleCheckboxChange = (key: React.Key) => {
     setDailyMaintenance(prev =>
@@ -54,10 +56,12 @@ const HPCard: React.FC = () => {
       prev.map(train => {
         if (train.key === key) {
           const updated = { ...train, done: !train.done };
-          if (updated.done) {
+          if (updated.done) 
+          {
             message.success(`${updated.TrenName} treninin bakımı yapıldı ✅`);
           } 
-          else {
+          else 
+          {
             message.info(`${updated.TrenName} treninin bakımı bekliyor ⏳`);
           }
           return updated;
@@ -67,7 +71,7 @@ const HPCard: React.FC = () => {
     );
   };
 
-  // Not için kullanılan fonksiyon :
+  // Not için oluşturduğumuz fonksiyon :
   const handleNoteChange = (tableKey: string, rowKey: React.Key, value: string) => {
     setModalData(prev =>
       prev.map(train =>
@@ -83,7 +87,8 @@ const HPCard: React.FC = () => {
   ) => {
     let modalCols = getDetailColumnsByKey(key);
 
-    if (key === 'daily') {
+    if (key === 'daily') 
+    {
       modalCols = [
         { title: 'Tren Adı', dataIndex: 'TrenName', key: 'TrenName' },
         {
@@ -130,6 +135,7 @@ const HPCard: React.FC = () => {
   return (
     <>
       <Row gutter={[16, 16]} className="card-row">
+        {/*bakım tarihi yaklaşan trenlerin kartı: */}
         <Col span={6}>
           <Card
             title={<span className="card-title blue">BAKIM TARİHİ YAKLAŞAN TRENLER</span>}
@@ -140,6 +146,7 @@ const HPCard: React.FC = () => {
             <p>Bakım yapılması gereken trenlerin detayları burada yer alıyor.</p>
           </Card>
         </Col>
+        {/*arızalı trenlerin kartı: */}
         <Col span={6}>
           <Card
             title={<span className="card-title red">ARIZALI TRENLER</span>}
@@ -150,6 +157,7 @@ const HPCard: React.FC = () => {
             <p>Arızalı trenlerin detayları burada yer alıyor.</p>
           </Card>
         </Col>
+        {/*günlük bakım yapılacak trenlerin kartı: */}
         <Col span={6}>
           <Card
             title={<span className="card-title green">GÜNLÜK BAKIM YAPILACAK TRENLER</span>}
@@ -160,6 +168,7 @@ const HPCard: React.FC = () => {
             <p>Günlük bakım yapılması gereken trenlerin detayları burada yer alıyor.</p>
           </Card>
         </Col>
+        {/*km'si yaklaşan trenlerin kartı: */}
         <Col span={6}>
           <Card
             title={<span className="card-title orange">KM YAKLAŞAN TRENLER</span>}
@@ -173,7 +182,7 @@ const HPCard: React.FC = () => {
       </Row>
 
       <Modal
-        title={modalTitle}
+        title={modalTitle} 
         open={isModalOpen}
         onOk={() => setIsModalOpen(false)}
         onCancel={() => setIsModalOpen(false)}
